@@ -25,7 +25,12 @@ typedef struct		s_list
 }					t_list;
 
 void				ft_putchar(char c);
+void				ft_freestr(char **str);
+void				ft_putint(int *line, int size);
+void				ft_printint(int	**mas, int size1, int size2);
+int					*ft_creatint(int size, int d);
 size_t				ft_strlen(const char *str);
+int					ft_atoi_base(const char *str, int str_base);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strcpy(char *dst, const char *src);

@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   creatint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichebota <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 16:37:30 by ichebota          #+#    #+#             */
-/*   Updated: 2016/12/14 16:37:34 by ichebota         ###   ########.fr       */
+/*   Created: 2017/08/19 18:16:57 by ichebota          #+#    #+#             */
+/*   Updated: 2017/08/19 18:18:18 by ichebota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+int		*ft_creatint(int size, int d)
 {
-	char			*ptr;
-	char			*res;
-	size_t			len;
-	unsigned int	start;
+	int		*ret;
+	int		i;
 
-	if (!s)
+	if (size <= 0)
 		return (NULL);
-	len = 0;
-	start = 0;
-	res = (char *)s;
-	ptr = (char *)s;
-	while (*ptr == ' ' || *ptr == '\n' || *ptr == '\t')
+	i = 0;
+	ret = (int*)malloc(sizeof(int) * size);
+	while (i < size)
 	{
-		ptr++;
-		start++;
+		ret[i] = d;
+		i++;
 	}
-	if (start == ft_strlen(s))
-		return (ft_strdup(""));
-	res = res + (ft_strlen(s) - 1);
-	while (*res == ' ' || *res == '\n' || *res == '\t')
-		res--;
-	len = res - ptr + 1;
-	return (ft_strsub(s, start, len));
+	return (ret);
 }
